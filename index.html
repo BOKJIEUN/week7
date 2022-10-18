@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+	<title></title>
+
+	<style type="text/css">
+		body{margin: 0;
+			font-family: 'Noto Sans KR', sans-serif;}
+		.text-area{display: flex; height: 96vh;}
+		#sectionA{width: 25vw; padding-top: 20px;
+					border-right: solid 1px black;}
+			h1{margin: 0; height: 13%; text-align: center;
+				font-size:45px; font-weight: 700;
+				border-bottom: solid 1px black;}
+			#sectionB{margin: 0; height: 40%; padding-top: 4px; padding-left: 23px; padding-right: 30px; font-size:16px; word-break: keep-all; line-height: 26px;
+				border-bottom: solid 1px black;}
+			h2{font-weight: 500;}
+			p{font-weight: 400;}
+			.input-area{padding-left: 23px; font-size: 19px;}
+
+		footer{width: 100vw; height: 4vh; background: #00FF00; bottom: 0px; left: 0px; padding-top: 2px; text-align: center; display: block;}
+
+		#myMap{margin: 0; width: 75vw; background: black;}
+
+
+		.resultDot{border-radius: 50%; background: white; position: absolute;}
+
+	</style>
+
+
+</head>
+<body>
+
+<div class="text-area">
+	<section id="sectionA">
+		<h1>돌연사.net</h1>
+			<section id="sectionB">
+				<h2>돌연-사 突然死</h2>
+				<p>[명사] 외관상 건강하였던 사람이 갑자기 죽는 일. 심장의 박동이 멎거나 본인이 모르는 사이에 진전된 질병의 증상이 나타나 발병 24시간 이내에 죽는다. <br> 돌연사.net은 노동자의 죽음을 아카이브하고 ‘점’을 형성함으로써 시각적 지도를 그려, 노동 문제에 대해 경각심을 일깨우고 대중들의 관심을 촉구하기 위한 프로젝트 입니다. </p>
+			</section>
+		<section class="input-area">
+		<h3>사망나이</h3> <input type="text" id="putAge" placeholder="숫자만 입력해 주세요.">
+		<h3>사망연도</h3> <input type="text" id="putYear" placeholder="끝 두 자리만 입력해 주세요.">
+		<h3>사망지역</h3> <select id="putReg">
+			<option value="100">서울</option>
+    		<option value="200">경기</option>
+   			 <option value="300">강원</option>
+    		<option value="400">충남</option>
+    		<option value="500">충북</option>
+    		<option value="600">전남</option>
+    		<option value="700">전북</option>
+    		<option value="800">경남</option>
+    		<option value="900">경북</option>
+    		<option value="1000">제주</option>
+		</select>
+		<br><br><input type="button" id="myButton" value="생성">
+		</section>
+
+	</section>
+
+	<div id="myMap"></div>
+</div>
+
+	<footer>본 웹페이지는 정세랑 단편소설 <보늬>에 등장하는 ʻ돌연사.net’에서 아이디어를 얻어 제작 되었습니다. Copyright 2022 All rights reserved BOK JIEUN</footer>
+
+
+		<script type="text/javascript">
+			
+			var dot = document.createElement("div")
+
+			var dotWidth = 0 + Number(putAge.value);
+			var dotHeight = 10 * Number(putYear.value);
+			var dotTop = 0 + Number(putReg.value);
+
+
+			myButton.onclick = function result() {
+				dot.className = "resultDot";
+				dot.style.width = dotWidth + "px";
+				dot.style.height = dotHeight + "px";
+				
+				dot.style.top = dotTop + "px";
+				document.body.appendChild(dot);
+
+				
+			}
+
+
+		</script>
+
+
+
+<script type="text/javascript">
+	
+
+
+
+</script>
+
+
+
+</body>
+</html>
